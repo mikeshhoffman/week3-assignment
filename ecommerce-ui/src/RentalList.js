@@ -16,14 +16,14 @@ export default class RentalList extends React.Component {
     };
 
     const rentalList = this.props.rentals
-      .map((rental, idx) => {
-        return (
-          <Rental
-            rental={rental}
-            onClick={this.props.onBookRental}
-            idx={idx}
-            key={idx}
-            buttonText="Book"
+    .map((rental, idx) => {
+      return (
+        <Rental
+          rental={rental}
+          onClick={this.props.onBookRental}
+          idx={idx}
+          key={idx}
+          buttonText="Book"
         />
       );
     });
