@@ -53,7 +53,6 @@ class ShoppingCart extends React.Component {
       );
     });
 
-
     return (
       <div>
         <h2>Shopping Cart</h2>

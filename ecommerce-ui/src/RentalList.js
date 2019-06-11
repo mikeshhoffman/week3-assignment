@@ -30,6 +30,7 @@ export default class RentalList extends React.Component {
 
     return (
       <div>
+        <h2>Available Rentals</h2>
         <ul style={ulStyle}>
           {rentalList}
         </ul>
