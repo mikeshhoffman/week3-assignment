@@ -12,30 +12,8 @@ class App extends React.Component {
 
   componentDidMount() {
     const rentalsAry = rentals
-      .map((rental, idx) => {
-        return (
-          {
-            "title": rentals[idx].title,
-            "houseType": rentals[idx].houseType,
-            "image": rentals[idx].image,
-            "location": {
-                "city": rentals[idx].location.city,
-                "country": rentals[idx].location.country
-            },
-            "payment": {
-                "cost": rentals[idx].payment.cost,
-                "description": rentals[idx].payment.description
-            },
-            "host": {
-                "name": rentals[idx].host.name,
-                "isSuperhost": rentals[idx].host.isSuperhost
-            },
-            "rating": {
-                "stars": rentals[idx].rating.stars,
-                "reviews": rentals[idx].rating.reviews
-            }
-          }
-        )
+    .map((rental, idx) => {
+      return rentals[idx]
     });
     this.setState(prevState => {
       return {
