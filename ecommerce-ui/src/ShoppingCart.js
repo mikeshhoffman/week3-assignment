@@ -8,11 +8,28 @@ class ShoppingCart extends React.Component {
   }
 
   render() {
+    const ulStyle = {
+      spaceAbove: "20px",
+      marginTop: "20px",
+      listStyleType: "none"
+    };
+    const liStyle = {
+      margin: "20px 0",
+      padding: "20px"
+    }
     const rentalList = this.props.rentals
       .map((rental, idx) => {
         return (
-          <li key={idx}>
-            <span>{rental}</span>
+          <li key={idx} style={liStyle}>
+            <div>{rental.title}.  Type: {rental.houseType}. </div>
+            <img src={rental.image} alt={rental.title}/>
+            <div> Location: {rental.location.city}, {rental.location.country}. </div>
+            <div> ${rental.payment.cost}. </div>
+            <div> {rental.payment.description} </div>
+            <div> Host: {rental.host.name}. </div>
+            <div> Superhost? {rental.host.isSuperhost} </div>
+            <div> Stars: {rental.rating.stars}, </div>
+            <div> reviews: {rental.rating.reviews} </div>
             <button onClick={() => this.props.onDeleteRental(idx)}>Delete</button>
           </li>
         );
@@ -21,7 +38,7 @@ class ShoppingCart extends React.Component {
     return (
       <div>
         <h2>Shopping Cart</h2>
-        <ul>
+        <ul style={ulStyle}>
           {rentalList}
         </ul>
       </div>

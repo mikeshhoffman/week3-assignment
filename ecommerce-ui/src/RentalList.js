@@ -9,6 +9,12 @@ export default class RentalList extends React.Component {
   }
 
   render() {
+    const ulStyle = {
+      spaceAbove: "10px",
+      marginTop: "10px",
+      listStyleType: "none"
+    };
+
     const rentalList = this.props.rentals
       .map((rental, idx) => {
         return (
@@ -24,7 +30,7 @@ export default class RentalList extends React.Component {
 
     return (
       <div>
-        <ul>
+        <ul style={ulStyle}>
           {rentalList}
         </ul>
     </div>
