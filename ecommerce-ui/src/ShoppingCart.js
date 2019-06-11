@@ -8,19 +8,28 @@ class ShoppingCart extends React.Component {
     onDeleteRental: PropTypes.func.isRequired,
   }
 
+  calcTotalCost(){
+    var i;
+    var total = 0;
+    for (i = 0; i < this.props.rentals.length; i++) { 
+      total += this.props.rentals[i].payment.cost;
+    }
+    return total;
+  }
+
   render() {
     const ulStyle = {
-      spaceAbove: "20px",
-      marginTop: "20px",
+      spaceAbove: "15px",
+      marginTop: "15px",
       listStyleType: "none"
     };
 
-    const liStyle = {
-      margin: "20px 0",
-      padding: "20px"
-    }
-
     // Approach 1: not using Rental.generic: 
+    // const liStyle = {
+    //   margin: "20px 0",
+    //   padding: "20px"
+    // }
+    //
     // const rentalList = this.props.rentals
     // .map((rental, idx) => {
     //   return (
@@ -59,6 +68,7 @@ class ShoppingCart extends React.Component {
         <ul style={ulStyle}>
           {rentalList}
         </ul>
+        <p>Total cost: ${this.calcTotalCost()}</p>
       </div>
     );
   }

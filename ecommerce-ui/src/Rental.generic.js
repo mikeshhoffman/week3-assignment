@@ -3,8 +3,8 @@ import React from 'react';
 export default class Rental extends React.Component {
   render() {
     const liStyle = {
-      margin: "20px 0",
-      padding: "20px"
+      margin: "15px 0",
+      padding: "15px"
     }
     const {rental, onClick, idx, buttonText} = this.props;
 
